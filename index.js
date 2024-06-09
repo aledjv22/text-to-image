@@ -11,23 +11,22 @@ const rl = readline.createInterface({
     output: process.stdout,
 });
 
-rl.question("->> Enter your text:\n-> ", async (text) => {
-    await downloadImage(text);
-    rl.close();
+rl.question("-+ Enter your prompt\n-> ", (text) => {
+    rl.question("-+ Enter the file name (without extension):\n-> ", async (fileName) => {
+        await downloadImage(text, fileName + ".jpeg");
+        rl.close();
+    });
 });
 
-async function downloadImage(text) {
+async function downloadImage(text, path) {
     const hf = new HfInference(process.env.HF_ACCESS_TOKEN);
-    const model = "runwayml/stable-diffusion-v1-5"
-    const path = "output.jpeg";
+    const model = "runwayml/stable-diffusion-v1-5";
 
     try {
         const response = await hf.textToImage({
             inputs: text,
             model: model,
         });
-        
-        console.log(response);
 
         const buffer = Buffer.from(await response.arrayBuffer());
         fs.writeFileSync(path, buffer);
