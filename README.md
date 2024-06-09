@@ -25,3 +25,7 @@ Sigue las intrucciones en la terminal:
 ## Notas adicionales
 - Las imágenes generadas se guardarán en la carpeta del proyecto con la extensión `.jpeg`.
 - Asegúrate de no subir imágenes generadas ni el archivo **.env** al repositorio. El archivo **.gitignore** ya está configurado para excluir estos archivos.
+
+## Ideas de mejora
+- Añadir un selector de modelo para que el usuario pueda elegir entre diferentes modelos de Hugging Face.
+- Traductor de texto para que el usuario pueda introducir un prompt en español, se traduzca al inglés y se genere la imagen. Esto permitiría obtener mejores resultados que si se introduce el texto en español directamente.
