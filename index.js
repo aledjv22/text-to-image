@@ -2,13 +2,22 @@ import { HfInference } from "@huggingface/inference";
 import dotenv from 'dotenv';
 import fs from 'fs';
 import open from "open";
+import readline from "readline";
 
 dotenv.config();
 
-const hf = new HfInference(process.env.HF_ACCESS_TOKEN);
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+});
 
-async function downloadImage() {
-    const text = "A cat sitting on a table";
+rl.question("->> Enter your text:\n-> ", async (text) => {
+    await downloadImage(text);
+    rl.close();
+});
+
+async function downloadImage(text) {
+    const hf = new HfInference(process.env.HF_ACCESS_TOKEN);
     const model = "runwayml/stable-diffusion-v1-5"
     const path = "output.jpeg";
 
@@ -28,5 +37,3 @@ async function downloadImage() {
         console.error("Error while downloading image: ", error.message);
     }
 }
-
-downloadImage();
