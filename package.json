@@ -1,0 +1,18 @@
+{
+  "name": "text-to-image",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "Victor Alejandro Díaz Jáuregui",
+  "license": "MIT",
+  "description": "",
+  "dependencies": {
+    "@huggingface/inference": "^2.7.0",
+    "dotenv": "^16.4.5"
+  }
+}
