@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node index.js",
+    "clean": "rm *.jpeg"
   },
   "keywords": [],
   "author": "Victor Alejandro Díaz Jáuregui",
@@ -16,7 +17,7 @@
     "chalk": "^5.3.0",
     "dotenv": "^16.4.5",
     "fs": "^0.0.1-security",
-    "open": "^10.1.0",
-    "readline": "^1.3.0"
+    "inquirer": "^9.2.23",
+    "open": "^10.1.0"
   }
 }
