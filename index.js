@@ -1,6 +1,7 @@
 import { HfInference } from "@huggingface/inference";
 import dotenv from 'dotenv';
 import fs from 'fs';
+import open from "open";
 
 dotenv.config();
 
@@ -21,6 +22,7 @@ async function downloadImage() {
 
         const buffer = Buffer.from(await response.arrayBuffer());
         fs.writeFileSync(path, buffer);
+        await open(path);
         console.log("Image downloaded successfully");
     } catch (error) {
         console.error("Error while downloading image: ", error.message);
