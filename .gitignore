@@ -241,4 +241,7 @@ dist
 .history
 .ionide
 
+# JavaScript 
+*.js
+
 # End of https://www.toptal.com/developers/gitignore/api/linux,visualstudiocode,node,images
