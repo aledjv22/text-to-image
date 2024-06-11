@@ -7,7 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node dist/index.js",
     "build": "tsc",
-    "clean": "rm *.jpeg"
+    "dev": "tsc && node dist/index.js",
+    "clean": "sudo rm -r dist && rm *.jpeg",
+    "clean:dist": "sudo rm -r dist",
+    "clean:jpeg": "rm *.jpeg"
   },
   "keywords": [],
   "author": "Victor Alejandro Díaz Jáuregui",
