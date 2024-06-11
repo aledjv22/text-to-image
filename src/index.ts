@@ -1,3 +1,3 @@
-import { promptUser } from './ui';
+import { promptUser } from './ui.js';
 
 promptUser().catch(console.error);

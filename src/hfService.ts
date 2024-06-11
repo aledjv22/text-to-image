@@ -1,7 +1,7 @@
 import { HfInference } from '@huggingface/inference';
 import fs from 'fs';
-import { config } from './config';
-import { showSuccessMessage, showErrorMessage } from './ui';
+import { config } from './config.js';
+import { showSuccessMessage, showErrorMessage } from './ui.js';
 
 export async function downloadImage(text: string, path: string, model: string) {
     const hf = new HfInference(config.hfAccessToken);

@@ -1,8 +1,8 @@
 import inquirer from 'inquirer';
 import chalk from 'chalk';
 import open from 'open';
-import models from './models';
-import { downloadImage } from './hfService';
+import models from './models.js';
+import { downloadImage } from './hfService.js';
 
 export async function promptUser() {
     const answers = await inquirer.prompt([
