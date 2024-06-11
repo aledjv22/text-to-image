@@ -1,8 +1,8 @@
 import inquirer from 'inquirer';
 import chalk from 'chalk';
 import open from 'open';
-import models from './models.js';
-import { downloadImage } from './hfService.js';
+import models from './models';
+import { downloadImage } from './hfService';
 
 export async function promptUser() {
     const answers = await inquirer.prompt([
@@ -31,11 +31,11 @@ export async function promptUser() {
     await downloadImage(prompt, `${fileName}.jpeg`, selectedModel);
 }
 
-export async function showSuccessMessage(path) {
+export async function showSuccessMessage(path: string) {
     await open(path);
     console.log(chalk.bold.green('Image downloaded successfully'));
 }
 
-export function showErrorMessage(error) {
+export function showErrorMessage(error: any) {
     console.error(chalk.bold.red('Error while downloading image: ', error.message));
 }

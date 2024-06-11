@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
+    "start": "node dist/index.js",
+    "build": "tsc",
     "clean": "rm *.jpeg"
   },
   "keywords": [],
@@ -19,5 +20,10 @@
     "fs": "^0.0.1-security",
     "inquirer": "^9.2.23",
     "open": "^10.1.0"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^9.0.7",
+    "@types/node": "^20.14.2",
+    "typescript": "^5.4.5"
   }
 }
